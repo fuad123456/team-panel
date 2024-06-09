@@ -1,0 +1,49 @@
+import { SidebarItemType } from "../../types";
+
+export const sidebarData:SidebarItemType[] = [
+	{
+		id:1,
+		name:"Аналитика",
+		value:"analitic"
+	},
+	{
+		id:2,
+		name:"Профиль",
+		value:"profile"
+	},
+	{
+		id:3,
+		name:"Модерация",
+		value:"moderation"
+	},
+	{
+		id:4,
+		name:"Чаты",
+		value:"chats"
+	},
+	{
+		id:5,
+		name:"Баннеры",
+		value:"banners"
+	},
+	{
+		id:6,
+		name:"Команда",
+		value:"team"
+	},
+	{
+		id:7,
+		name:"Блог",
+		value:"blog"
+	},
+	{
+		id:8,
+		name:"Курс валют",
+		value:"currency"
+	},
+	{
+		id:9,
+		name:"Выйти",
+		value:"logout"
+	},
+]
