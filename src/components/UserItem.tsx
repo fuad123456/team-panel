@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import { UserType } from '../types'
 import "./../App.css"
-import dots from "./../assets/dots.svg"
+import ManagePopover from '../ManagePopover/ManagePopover'
 type propsType = {
 	user: UserType
 }
@@ -28,11 +28,7 @@ export default function UserItem({ user }: propsType): ReactElement {
 						</div>
 					</div>
 				</div>
-				<div>
-					<button>
-							<img src={dots} alt="" />
-					</button>
-				</div>
+				<ManagePopover user={user}/>
 			</div>
 		</li>
 	)

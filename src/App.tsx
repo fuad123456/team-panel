@@ -9,7 +9,7 @@ import Blog from './components/Blog/Blog.tsx';
 import Moderation from './components/Moderation/Moderation.tsx';
 import Currency from './components/currency/Currency.tsx';
 import Profile from './components/Profile/Profile.tsx';
-import Analitic from './components/Analitic/Analitic.tsx';
+import Analytic from './components/Analitic/Analytic.tsx';
 import Chats from './components/Chats/Chats.tsx';
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
 					<Route path='/blog' element={<Blog/>}/>
 					<Route path='/currency' element={<Currency/>}/>
 					<Route path='/profile' element={<Profile/>}/>
-					<Route path='/analitic' element={<Analitic/>}/>
+					<Route path='/analitic' element={<Analytic/>}/>
 					<Route path='/chats' element={<Chats/>}/>
 				</Route>
 			</Routes>
