@@ -1,18 +1,18 @@
 import  { ReactElement,  useState } from 'react'
 import { useAppDispatch } from '../store/hooks'
 import { setUserPermissions } from '../store/slices/admin.slice'
+import {UserType} from "../types.ts";
 
 
 type propsType = {
-	userId:number
-	permission:string
-	setAllChecked:(value:boolean)=>void
-	allChecked:boolean
-	permissions:string[]
-	forwardedRef: React.RefObject<HTMLFormElement>;
+	user: UserType,
+	permission: string,
+	setAllChecked: (value: boolean) => void,
+	allChecked: boolean,
+	forwardedRef: React.RefObject<HTMLFormElement>,
 }
-export default function CheckBox({permission, allChecked, setAllChecked, permissions, forwardedRef, userId}:propsType):ReactElement {
-	const [checked, setChecked] = useState(false)
+export default function CheckBox({ permission, allChecked, setAllChecked, forwardedRef, user }:propsType):ReactElement {
+	const [checked, setChecked] = useState(user.permissions.includes(permission))
 	const dispatch = useAppDispatch()
 	function setCheckedItem(){
 		if(forwardedRef.current!=null){
@@ -21,28 +21,23 @@ export default function CheckBox({permission, allChecked, setAllChecked, permiss
 			const checkedInputs = checkedInputsArray.filter(input=>input.checked===true)
 			const checkedInputValues = checkedInputs.map(i=>i.value)
 			dispatch(setUserPermissions(
-				{id:userId, permissions:checkedInputValues}
+				{id:user.id, permissions:checkedInputValues}
 				))
 				}
-		setChecked(prev=>!prev)
+		setChecked(!checked)
 		setAllChecked(false)
-
-	}
-	const isChecked=():boolean=>{
-		if(permissions.includes(permission)) return true;
-		return false
 	}
 	return (
 		<div className='flex gap-1'>
 			<input type="checkbox"
 				className='w-4 rounded-3xl'
-				name={userId.toString()}
+				name={user.id.toString()}
 				id={permission}
-				checked={isChecked() || checked || allChecked}
+				checked={ checked || allChecked}
 				onChange={setCheckedItem}
 				value={permission}
 			/>
-			<label htmlFor={userId.toString()}>{permission}</label>
+			<label htmlFor={user.id.toString()}>{permission}</label>
 		</div>
 	)
 }

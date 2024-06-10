@@ -63,9 +63,8 @@ export default function ManagePopver({ user }: propsType) {
 									allChecked={allChecked}
 									permission={p}
 									setAllChecked={setAllChecked}
-									permissions={user.permissions}
+									user={user}
 									forwardedRef={formRef}
-									userId={user.id}
 								/>
 							</div>
 						))}

@@ -15,7 +15,7 @@ export default function SideBarItems(): ReactElement {
 	}, [])
 	function getIconPaths() {
 		return new Promise((resolve, reject) => {
-			const iconContext = import.meta.glob('../../assets/*.svg');
+			const iconContext = import.meta.glob('../../assets/sidebar/*.svg');
 			const icons = Object.entries(iconContext).map(([, iconModule]) => iconModule());
 
 			const iconPaths = icons.map(iconPromise => {

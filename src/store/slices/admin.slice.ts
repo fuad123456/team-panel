@@ -37,5 +37,5 @@ const adminSlice = createSlice({
 		}
 	}
 })
-export const {setUserPermissions} = adminSlice.actions
+export const {setUserPermissions, addUser, deleteUser} = adminSlice.actions
 export default adminSlice

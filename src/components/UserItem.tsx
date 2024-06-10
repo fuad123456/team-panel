@@ -11,7 +11,7 @@ export default function UserItem({ user }: propsType): ReactElement {
 			<div className='flex justify-between hover:bg-gray-100 px-7 py-2'>
 				<div className="flex">
 					<div className="rounded-full w-16 h-16 mr-3"
-						style={{ backgroundImage: `url(${user.image})`, backgroundPosition: "center center", backgroundSize: "cover" }}
+						style={{ backgroundImage: `url(${user.image})`, backgroundPosition: "center center", backgroundSize: "cover"}}
 					>
 					</div>
 					<div className="user-content">

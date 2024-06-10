@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-bg {
-	@apply bg-green-500; /* Применяет стиль фона зеленого цвета из Tailwind */
-  }
+
   .mb26{
 	margin-bottom: 26px;
   }

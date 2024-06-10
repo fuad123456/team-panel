@@ -1,10 +1,6 @@
 export default {
 	plugins: {
-		tailwindcss: {
-			margin: {
-				'mb26': '26px',
-			},
-		},
+		tailwindcss: {},
 		autoprefixer: {},
 	},
 };
