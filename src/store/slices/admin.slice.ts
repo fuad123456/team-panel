@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { UserType } from "../../types";
 import { users } from "../data";
+import {deleteUserAction} from "../actions/action.ts";
 
 
 type initialStateType={
@@ -35,6 +36,22 @@ const adminSlice = createSlice({
 			}
 			state.users.push(newUser)
 		}
+	},
+	extraReducers:(builder)=>{
+		builder.addCase(deleteUserAction.pending, (state)=>{
+			state.loading=true;
+		})
+		builder.addCase(deleteUserAction.fulfilled, (state, action) =>{
+			const {userId, isDelete}=action.payload
+			if(isDelete){
+				state.users = state.users.filter(u=>u.id!==userId)
+			}
+			state.loading=false;
+
+		})
+		builder.addCase(deleteUserAction.rejected, state => {
+			state.loading=false;
+		})
 	}
 })
 export const {setUserPermissions, addUser, deleteUser} = adminSlice.actions

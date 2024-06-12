@@ -18,8 +18,9 @@ export default function SideBarItems(): ReactElement {
 			const iconContext = import.meta.glob('../../assets/sidebar/*.svg');
 			const icons = Object.entries(iconContext).map(([, iconModule]) => iconModule());
 
-			const iconPaths = icons.map(iconPromise => {
-				return iconPromise.then(icon => (icon as { default: string })["default"]);
+			const iconPaths = icons.map(async iconPromise => {
+				const icon = await iconPromise
+				return (icon as { default: string })["default"]
 			});
 
 			Promise.all(iconPaths).then(resolvedIconPaths => {
@@ -36,7 +37,6 @@ export default function SideBarItems(): ReactElement {
 				.split(".svg")[0] === value
 			)
 	}
-	console.log(getCurrentPath(path,"blog"));
 	
 	return (
 		<div className=''>

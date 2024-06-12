@@ -11,6 +11,7 @@ import Currency from './components/currency/Currency.tsx';
 import Profile from './components/Profile/Profile.tsx';
 import Analytic from './components/Analitic/Analytic.tsx';
 import Chats from './components/Chats/Chats.tsx';
+import {Banners} from "./components/Banners/Banners.tsx";
 
 function App() {
 	
@@ -26,6 +27,7 @@ function App() {
 					<Route path='/profile' element={<Profile/>}/>
 					<Route path='/analitic' element={<Analytic/>}/>
 					<Route path='/chats' element={<Chats/>}/>
+					<Route path='/banners' element={<Banners/>}/>
 				</Route>
 			</Routes>
 		</>

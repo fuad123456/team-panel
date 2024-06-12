@@ -1,7 +1,7 @@
 import  { ReactElement,  useState } from 'react'
-import { useAppDispatch } from '../store/hooks'
-import { setUserPermissions } from '../store/slices/admin.slice'
-import {UserType} from "../types.ts";
+import { useAppDispatch } from '../../../store/hooks.tsx'
+import { setUserPermissions } from '../../../store/slices/admin.slice.ts'
+import {UserType} from "../../../types.ts";
 
 
 type propsType = {
@@ -28,16 +28,17 @@ export default function CheckBox({ permission, allChecked, setAllChecked, forwar
 		setAllChecked(false)
 	}
 	return (
-		<div className='flex gap-1'>
+		<div className='flex gap-2'>
 			<input type="checkbox"
-				className='w-4 rounded-3xl'
+				className='w-4 rounded-3xl border-2 bg-[#5856D6]'
+				style={{backgroundColor:"#5856D6"}}
 				name={user.id.toString()}
 				id={permission}
 				checked={ checked || allChecked}
 				onChange={setCheckedItem}
 				value={permission}
 			/>
-			<label htmlFor={user.id.toString()}>{permission}</label>
+			<label htmlFor={permission+user.id.toString()}>{permission}</label>
 		</div>
 	)
 }
