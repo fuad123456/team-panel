@@ -8,7 +8,7 @@ export default function MainLayout() {
 			<main className=''>
 				<div className="flex">
 					<SideBar />
-					<div className='px-40 py-20 w-full' >
+					<div className='p-0 py-0 sm:px-5 md:px-10 lg:px-20 xl:px-40 sm-py-10 md:py-20 w-full' >
 						<Outlet/>
 					</div>
 				</div>

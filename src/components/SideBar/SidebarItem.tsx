@@ -7,11 +7,11 @@ export default function SidebarItem({ value, name, iconPath }: SidebarItemType):
 
 	return (
 		<Link to={`/${value}`} title={value}>
-			<div className='flex justify-center items-center mb26'>
+			<div className='flex sm:justify-center items-center mb26 gap-2'>
 				<div>
 					<img src={`${iconPath}`} alt="" className='w-5' style={{minWidth:"24px"}}/>
 				</div>
-				<div className='block md:hidden'>{name}</div>
+				<div className='block sm:hidden'>{name}</div>
 			</div>
 		</Link>
 	)

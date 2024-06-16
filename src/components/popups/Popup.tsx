@@ -3,6 +3,7 @@ import {useAppDispatch, useAppSelector} from "../../store/hooks.tsx";
 import {PopupCheckboxes} from "./PopupCheckboxes.tsx";
 import {addUser} from "../../store/slices/admin.slice.ts";
 import {setOpenPopup, setSecondaryPopup} from "../../store/slices/popovers.slice.ts";
+import close from "../../assets/close.svg";
 
 export function Popup():ReactElement {
 
@@ -36,7 +37,11 @@ export function Popup():ReactElement {
     return (
         <div className="fixed inset-0 bg-[#1C1C1C] bg-opacity-10 flex items-center justify-center z-10">
             <div className="bg-white px-[60px] py-[70px] rounded-2xl shadow-popover-popup w-[526px] relative">
-
+                <button className={"absolute top-3 right-3 bg-[#EBEBF0] p-2 rounded-lg"}
+                        onClick={() => dispatch(setOpenPopup(!isOpenPopup))}
+                >
+                    <img src={close} alt="close"/>
+                </button>
                 <form className="space-y-4" ref={popformRef}
                     onSubmit={(e)=>{
                         e.preventDefault()

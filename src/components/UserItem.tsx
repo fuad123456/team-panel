@@ -18,11 +18,11 @@ export default function UserItem({ user }: propsType): ReactElement {
 	}
 
 	return (
-		<li className='list-none'>
-			<div className='flex justify-between hover:bg-gray-100 px-7 py-2'>
+		<li className='list-none '>
+			<div className='flex justify-between hover:bg-gray-100 px-7 py-4'>
 				<div className="flex">
 					<div className={"w-20"}>
-						<div className="rounded-full w-16 h-16 mr-3"
+						<div className="rounded-full w-14 h-14 sm:w-16 sm:h-16 mr-3"
 							style={styleObj}
 						>
 					</div>
@@ -34,7 +34,7 @@ export default function UserItem({ user }: propsType): ReactElement {
 						</div>
 						<div className="flex flex-wrap gap-1">
 							{user.permissions.map((p,i)=>(
-								<span className='rounded-[10px] border border-[#c1c1cb] px-3 py-1 mr-1' key={p+i}>
+								<span className='rounded-[10px] border border-[#c1c1cb] px-3 py-0.5 mr-1' key={p+i}>
 									<span className='text-[#9494A0]'>{p}</span>
 								</span>
 							))}

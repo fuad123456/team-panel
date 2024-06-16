@@ -57,11 +57,12 @@ export default function ManagePopver({ user, activePop }: propsType) {
 			<div className={`${activePop ? "block" : "hidden"}`}>
 				<div className="flex flex-col p-2 absolute rounded-md bg-[#F9FAFB] w-64 z-30 shadow-popover">
 					<form  ref={formRef}>
-						<div>
+						<div className={"flex gap-2"}>
 							<input type="checkbox" name="all" id="all"
 								onChange={onChangeAll}
 								checked={allChecked}
 								value={"all"}
+								className={"w-4 rounded-3xl border-2 bg-[#5856D6]"}
 							/>
 							<label htmlFor="all">Все</label>
 						</div>

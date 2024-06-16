@@ -6,12 +6,14 @@ import {
 } from "@reduxjs/toolkit";
 import adminSlice from "./slices/admin.slice";
 import popoversSlice from "./slices/popovers.slice.ts";
+import burgerSlice from "./slices/burger.slice.ts";
 
 
 
 const rootReducer = combineReducers({
 	admin:adminSlice.reducer,
-    popups:popoversSlice.reducer
+    popups:popoversSlice.reducer,
+    burger:burgerSlice.reducer
 });
 
 const store = configureStore({

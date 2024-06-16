@@ -40,11 +40,15 @@ export default function SideBarItems(): ReactElement {
 	
 	return (
 		<div className=''>
-			<div className='flex w-full justify-center items-center mb26'>
+			<div className=' w-full justify-center items-center mb26 hidden sm:flex'>
 				<img src={logo} alt="logo" />
 			</div>
 			<div className='flex w-full justify-center items-center mb26'>
 				<img src={owner} alt="logo" className='w-[60px]'/>
+				<div className={"ml-3 block sm:hidden"}>
+					<div className={"text-[#424F5E] text-lg font-bold"}>Артем Иванов</div>
+					<div className={"text-[#9494A0]"}>Собственник</div>
+				</div>
 			</div>
 			{
 				sidebarData.map(i => (

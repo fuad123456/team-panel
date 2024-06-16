@@ -8,6 +8,7 @@ export function SecondaryPopup() {
         <>
             <div className="fixed inset-0 bg-[#1C1C1C] bg-opacity-10 flex items-center justify-center z-10">
                 <div className="bg-white px-[60px] py-[70px] rounded-2xl shadow-popover-popup w-[526px] relative">
+
                     <div className={"text-lg text-[#424F5E] font-bold"}>
                         {message}
                     </div>

@@ -44,7 +44,7 @@ export const ChoicePopover = ({setChoiceVisible, choiceVisible, setActivePop, us
     return (
         <>
             {choiceVisible &&
-                <div className={"p-4 bg-[#f9fafb] rounded-xl absolute w-64 z-20"} >
+                <div className={"p-4 bg-[#f9fafb] rounded-xl absolute w-64 z-20 left-[-200px]"} >
                     <div className={"mb-2 text-[#424f5e] hover:text-[#9494a0]"}>
                         <button
                         onClick={changePermission}
