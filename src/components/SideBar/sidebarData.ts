@@ -4,7 +4,7 @@ export const sidebarData:SidebarItemType[] = [
 	{
 		id:1,
 		name:"Аналитика",
-		value:"analitic"
+		value:"analytic"
 	},
 	{
 		id:2,
