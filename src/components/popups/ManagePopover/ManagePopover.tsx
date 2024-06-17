@@ -1,11 +1,9 @@
 import React, {useEffect, useRef, useState} from 'react'
-import { users } from "../../../store/data.ts"
+import {permissions} from "../../../store/data.ts"
 import CheckBox from './CheckBox.tsx'
 import { UserType } from '../../../types.ts'
 import { useAppDispatch } from '../../../store/hooks.tsx'
 import { setUserPermissions } from '../../../store/slices/admin.slice.ts'
-
-
 
 type propsType = {
 	user: UserType
@@ -15,7 +13,6 @@ type propsType = {
 }
 export default function ManagePopver({ user, activePop }: propsType) {
 	const [allChecked, setAllChecked] = useState(false)
-	const permissions = [...new Set((users.map(u => u.permissions)).flat())]
 	const dispatch = useAppDispatch()
 	const formRef = useRef<HTMLFormElement>(null)
 	function onChangeAll() {
@@ -31,7 +28,6 @@ export default function ManagePopver({ user, activePop }: propsType) {
 					const checkedInputsNode = formRef.current?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
 					const checkedInputsArray = Array.from(checkedInputsNode)
 					const checkedInputValues = checkedInputsArray.map(i => i.value)
-					console.log(checkedInputValues)
 					resolve(checkedInputValues)
 				}).then((res)=>{
 					dispatch(setUserPermissions(
@@ -55,7 +51,7 @@ export default function ManagePopver({ user, activePop }: propsType) {
 
 	return (
 			<div className={`${activePop ? "block" : "hidden"}`}>
-				<div className="flex flex-col p-2 absolute rounded-md bg-[#F9FAFB] w-64 z-30 shadow-popover">
+				<div className="flex flex-col p-2 absolute rounded-md bg-[#F9FAFB] w-64 z-30 shadow-popover left-[-200px]">
 					<form  ref={formRef}>
 						<div className={"flex gap-2"}>
 							<input type="checkbox" name="all" id="all"

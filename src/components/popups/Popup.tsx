@@ -9,15 +9,15 @@ export function Popup():ReactElement {
 
     const [emailValue, setEmailValue] = useState("")
     const dispatch = useAppDispatch()
-    const popformRef = useRef<HTMLFormElement>(null)
+    const popupFormRef = useRef<HTMLFormElement>(null)
     const isOpenPopup = useAppSelector(state => state.popups.popup)
     function validateEmail(email:string):boolean {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     }
     function onAddUser():void{
-            if (popformRef.current != null && validateEmail(emailValue)) {
-                const checkedInputsNode = popformRef.current?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
+            if (popupFormRef.current != null && validateEmail(emailValue)) {
+                const checkedInputsNode = popupFormRef.current?.querySelectorAll('input[type="checkbox"]:checked') as NodeListOf<HTMLInputElement>
 
                 const checkedInputsArray = Array.from(checkedInputsNode)
                 const checkedInputValues = checkedInputsArray.map(i => i.value)
@@ -42,7 +42,7 @@ export function Popup():ReactElement {
                 >
                     <img src={close} alt="close"/>
                 </button>
-                <form className="space-y-4" ref={popformRef}
+                <form className="space-y-4" ref={popupFormRef}
                     onSubmit={(e)=>{
                         e.preventDefault()
                     }}

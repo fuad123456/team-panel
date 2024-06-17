@@ -83,3 +83,4 @@ export const users = [
 		"image": "https://gorodprizrak.com/wp-content/uploads/2024/01/photo_2024-01-05_12-36-52-2.jpg"
 	},
 ]
+export const permissions = [...new Set((users.map(u => u.permissions)).flat())]

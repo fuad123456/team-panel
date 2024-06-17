@@ -3,7 +3,7 @@ import { sidebarData } from './sidebarData'
 import SidebarItem from './SidebarItem'
 import logo from "./../../assets/logo.svg"
 import owner from "./../../assets/owner.png"
-import { iconsPathsObject} from "../iconsPathsArray.ts";
+
 
 export default function SideBarItems(): ReactElement {
 
@@ -25,7 +25,7 @@ export default function SideBarItems(): ReactElement {
 						key={i.id}
 						name={i.name}
 						value={i.value}
-						iconPath={iconsPathsObject[i.value]}
+						iconPath={i.value}
 					/>))
 			}
 		</div>
