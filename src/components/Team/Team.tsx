@@ -11,6 +11,7 @@ export default function Team() {
 				<UserHeader title='Команда' />
 				{users.map(user => {
 					return <UserItem user={user} key={user.id} />
+
 				})}
 			</div>
 		</div>
